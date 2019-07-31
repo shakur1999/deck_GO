@@ -8,6 +8,7 @@ type person struct {
 }
 
 func main() {
-	alex := person{firstName: "Alex", lastName: "Anderson"}
+
+	// alex := person{firstName: "Alex", lastName: "Anderson"}
 	fmt.Println(alex)
 }
