@@ -6,6 +6,8 @@ type bot interface {
 	getGreeting() string
 }
 
+// option1, we used interfaces to define a method set aka getGreeting() string
+
 type englishBot struct{}
 type spanishBot struct{}
 
@@ -23,9 +25,9 @@ func printGreeting(b bot) {
 
 func (englishBot) getGreeting() string {
 	// VERY custom login for generating an enlish greeting
-	return "Hi there"
+	return "Hi there!"
 }
 
 func (spanishBot) getGreeting() string {
-	return "Hola amigo"
+	return "Hola amigo!"
 }
