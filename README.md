@@ -1,6 +1,6 @@
 # deck_GO
-```clone repo```
+```* clone repo```
 
-```change into dicectory wanted```
+```* change into dicectory wanted```
 
-```go run main.go```
+```* go run main.go```
