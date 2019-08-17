@@ -1,15 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+	"fmt"
+)
 
 func main() {
-	links := [] string {
-		"https://google.com",
-		"https://yahoo.com",
-		"https://facebook.com",
-		"https://golang.org",
-		"https://amazon.com",
-		"https://creditkarma.com"
+	links := []string {
+		"http://google.com",
+		"http://yahoo.com",
+		"http://facebook.com",
+		"https://golang.io",
+		"http://amazon.com",
+		"http://creditkarma.com",
 	}
 
 	for _, link := range links {
@@ -24,5 +27,5 @@ func checkLink(link string) {
 		return
 	}
 
-	fmt.Println(link, is super duper healthy)
+	fmt.Println(link, "is super duper healthy")
 }
