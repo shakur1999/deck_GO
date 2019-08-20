@@ -16,19 +16,28 @@ func main() {
 		"http://code.corp.creditkarma.com",
 	}
 
+	c := make(chan string) //this is how we create a brad new channel in Go
+
 	for _, link := range links {
-		 go checkLink(link)
+		 go checkLink(link, c)
+		//  fmt.Println(<- c) this seems to do the samething as the FOR loop below
+	}
+
+	for {
+		go checkLink(<-c, c)
 	}
 }
 
-func checkLink(link string) {
+func checkLink(link string, c chan string) {
 	_, err := http.Get(link) 
 		if err != nil {
 			fmt.Println(link, "server is DOWN!")
+			c <- link
 			return
 		}
 		
 		fmt.Println(link, "Server Operational!")
+		c <- link
 }
 
 // package main
